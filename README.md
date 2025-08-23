@@ -9,6 +9,7 @@
 
 ### Create config.env file in config directory
 ```env
+# Useful Variables
 PORT=
 NODE_ENV=
 BACKEND_URL=
