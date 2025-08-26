@@ -1,7 +1,7 @@
 export default function LoadingComponent() {
 
    return (
-      <div>
+      <div className="text-4xl">
          <h2>LoadingComponent</h2>
       </div>
 

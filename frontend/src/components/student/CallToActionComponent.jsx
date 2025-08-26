@@ -1,7 +1,7 @@
 export default function CallToActionComponent() {
 
    return (
-      <div>
+      <div className="text-4xl">
          <h2>CallToActionComponent</h2>
       </div>
 
