@@ -8,6 +8,11 @@ import CourseListPage from '../pages/student/CourseListPage.jsx';
 import CourseDetailsPage from '../pages/student/CourseDetailsPage.jsx';
 import EnrollmentsPage from '../pages/student/EnrollmentsPage.jsx';
 import LoadingComponent from '../components/student/LoadingComponent.jsx';
+import EducatorPage from '../pages/educator/EducatorPage.jsx';
+import DashboardPage from '../pages/educator/DashboardPage.jsx';
+import AddCoursePage from '../pages/educator/AddCoursePage.jsx';
+import CoursesPage from '../pages/educator/CoursesPage.jsx';
+import StudentsEnrolledPage from '../pages/educator/StudentsEnrolledPage.jsx';
 
 
 
@@ -23,6 +28,12 @@ export default function App() {
             <Route path="/enrollments" element={<EnrollmentsPage />} />
             <Route path="/player/:courseId" element={<PlayerPage />} />
             <Route path="/loading/:path" element={<LoadingComponent />} />
+            <Route path="/educator" element={<EducatorPage />} >
+               <Route path="educator" element={<DashboardPage />} />
+               <Route path="add-course" element={<AddCoursePage />} />
+               <Route path="courses" element={<CoursesPage />} />
+               <Route path="students-enrolled" element={<StudentsEnrolledPage />} />
+            </Route>
          </Routes>
       </div>
 
