@@ -15,7 +15,6 @@ import CoursesPage from '../pages/educator/CoursesPage.jsx';
 import StudentsEnrolledPage from '../pages/educator/StudentsEnrolledPage.jsx';
 
 
-
 export default function App() {
 
    return (
