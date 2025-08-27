@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Routes, Route, useLocation, useMatch } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify';
+import NavbarComponent from '../components/student/NavbarComponent.jsx';
 import HomePage from '../pages/student/HomePage.jsx';
 import PlayerPage from '../pages/student/PlayerPage.jsx';
 import CourseListPage from '../pages/student/CourseListPage.jsx';
@@ -17,8 +18,11 @@ import StudentsEnrolledPage from '../pages/educator/StudentsEnrolledPage.jsx';
 
 export default function App() {
 
+   const isEducatorRoute = useMatch('/educator/*');
+
    return (
-      <div>
+      <div className="text-default min-h-screen bg-white">
+         {!isEducatorRoute && <NavbarComponent />}
          <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/course/:courseId" element={<CourseDetailsPage />} />
