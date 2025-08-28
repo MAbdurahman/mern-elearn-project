@@ -7,6 +7,27 @@
 
 @theme {
    --font-body: 'Outfit', sans-serif;
+   --font-size-default-15: 15px;
+   --font-size-default-21: 21px;
+   --font-size-course-details-heading-smail-26: 26px;
+   --font-size-course-details-heading-smail-36: 36px;
+   --font-size-course-details-heading-large-36: 36px;
+   --font-size-course-details-heading-large-44: 44px;
+   --font-size-home-heading-small-28: 28px;
+   --font-size-home-heading-small-34: 34px;
+   --font-size-home-heading-large-48: 48px;
+   --font-size-home-heading-large-56: 56px;
+
+
+   --box-shadow-custom-card: 0px 4px 15px 2px rgba(0, 0, 0, 0.1);
+
+   --max-width-course-card: 424px;
+
+   --spacing-section-height: 500px;
+
+   --grid-template-columns-auto: repeat(auto-fit, minmax(200px, 1fr));
+
+
 }
 
 @layer base {
@@ -27,7 +48,9 @@
 
 :root {
    --font-primary: 'Outfit', sans-serif;
+
 }
+
 
 
 /*=============================================
@@ -38,9 +61,6 @@
    display: none;
 }
 
-/*.app {
-   margin-top: 8rem;
-}*/
 .add-cursor {
    cursor: pointer !important;
 }
@@ -67,3 +87,60 @@
 .rich-text ul { margin-left: 30px; list-style-type: disc; }
 
 .rich-text li { margin-bottom: 8px; }
+
+
+.font-default-15 {
+   font-size: var(--font-size-default-15);
+}
+.font-default-21 {
+   font-size: var(--font-size-default-21);
+}
+.font-course-details-heading-smail-26 {
+   font-size: var(--font-size-course-details-heading-smail-26);
+}
+.font-course-details-heading-smail-36 {
+   font-size: var(--font-size-course-details-heading-smail-36);
+}
+.font-course-details-heading-large-36 {
+   font-size: var(--font-size-course-details-heading-large-36);
+}
+.font-course-details-heading-large-44 {
+   font-size: var(--font-size-course-details-heading-large-44);
+}
+.font-course-details-heading-large-44 {
+   font-size: var(--font-size-course-details-heading-large-44);
+}
+.font-course-details-heading-large-44 {
+   font-size: var(--font-size-course-details-heading-large-44);
+}
+.font-course-details-heading-large-44 {
+   font-size: var(--font-size-course-details-heading-large-44);
+}
+.font-home-heading-small-28 {
+   font-size: var(--font-size-home-heading-small-28);
+}
+.font-home-heading-small-34 {
+   font-size: var(--font-size-home-heading-small-34);
+}
+.font-home-heading-large-48 {
+   font-size: var(--font-size-home-heading-large-48);
+}
+.font-home-heading-large-56 {
+   font-size: var(--font-size-home-heading-large-56);
+}
+
+.box-shadow-custom-card {
+   box-shadow: var(--box-shadow-custom-card);
+}
+
+.max-width-course-card {
+   max-width: var(--max-width-course-card);
+}
+
+.spacing-section-height {
+   height: var(--spacing-section-height);
+}
+
+.grid-template-columns-auto {
+   grid-template-columns: var(--grid-template-columns-auto);
+}

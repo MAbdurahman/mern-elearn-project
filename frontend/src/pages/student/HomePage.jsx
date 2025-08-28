@@ -1,8 +1,12 @@
+import React from 'react';
+import HeroComponent from '../../components/student/HeroComponent.jsx';
+
+
 export default function HomePage() {
 
    return (
-      <div className="text-4xl">
-         <h2>HomePage</h2>
+      <div className="flex flex-col items-center space-y-7 text-center">
+         <HeroComponent />
       </div>
 
    );
