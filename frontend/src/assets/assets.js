@@ -128,7 +128,8 @@ export const dummyCourses = [
                 <li>Create dynamic web applications</li>
             </ul>
         `,
-        courseThumbnail: "https://example.com/thumbnails/js-course.jpg",
+        /*courseThumbnail: "https://example.com/thumbnails/js-course.jpg",*/
+       courseThumbnail: "https://res.cloudinary.com/mdbdrrhm/image/upload/v1755775912/mern-ecom-platform/products/qnm4x2fdc4tfi8vonyuc.jpg",
         coursePrice: 49.99,
         isPublished: true,
         discount: 20,
@@ -207,7 +208,8 @@ export const dummyCourses = [
                 <li>Work with libraries and frameworks</li>
             </ul>
         `,
-        courseThumbnail: "https://example.com/thumbnails/python-course.jpg",
+        /*courseThumbnail: "https://example.com/thumbnails/python-course.jpg",*/
+       courseThumbnail: "https://res.cloudinary.com/mdbdrrhm/image/upload/v1755775654/mern-ecom-platform/products/akc6uekcacudvtm2ikph.jpg",
         coursePrice: 79.99,
         isPublished: true,
         discount: 15,
@@ -286,7 +288,8 @@ export const dummyCourses = [
                 <li>Understand databases and server-side programming</li>
             </ul>
         `,
-        courseThumbnail: "https://example.com/thumbnails/web-dev-bootcamp.jpg",
+        /*courseThumbnail: "https://example.com/thumbnails/web-dev-bootcamp.jpg",*/
+       courseThumbnail: "https://res.cloudinary.com/mdbdrrhm/image/upload/v1755775770/mern-ecom-platform/products/iel363pc6hdnbe6h69zw.jpg",
         coursePrice: 99.99,
         isPublished: true,
         discount: 25,
@@ -365,7 +368,8 @@ export const dummyCourses = [
                 <li>Work with popular data science libraries like Pandas and Scikit-Learn</li>
             </ul>
         `,
-        courseThumbnail: "https://example.com/thumbnails/data-science.jpg",
+        /*courseThumbnail: "https://example.com/thumbnails/data-science.jpg",*/
+       courseThumbnail: "https://res.cloudinary.com/mdbdrrhm/image/upload/v1755775778/mern-ecom-platform/products/ljpgd5vsavgpxn1f0mu8.jpg",
         coursePrice: 89.99,
         isPublished: true,
         discount: 30,
