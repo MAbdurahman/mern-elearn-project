@@ -54,11 +54,11 @@ npm install
 ```
 or 
 ```shell
-yarn install
+yarn or yarn install
 ```
 then
 ```shell
-npm start
+npm run start
 ```
 or 
 
