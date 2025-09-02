@@ -18,7 +18,7 @@ export const AppContextProvider = (props) => {
    const { user } = useUser();
 
    const [showLogin, setShowLogin] = useState(false);
-   const [isEducator,setIsEducator] = useState(false);
+   const [isEducator,setIsEducator] = useState(true);
    const [allCourses, setAllCourses] = useState([]);
    const [userData, setUserData] = useState(null);
    const [enrolledCourses, setEnrolledCourses] = useState([]);
@@ -41,8 +41,26 @@ export const AppContextProvider = (props) => {
       } catch (error) {
          toast.error(error.message)
       }*/
-
    }
+
+   /**
+    * calculateCourseRating - calculates the average rating of the course
+    * @param course - the specified course
+    * @returns {number} - returns the average rating of course
+    */
+   const calculateCourseRating = (course) => {
+
+      if (course.courseRatings.length === 0) {
+         return 0
+      }
+
+      let totalRating = 0
+      course.courseRatings.forEach(rating => {
+         totalRating += rating.rating
+      })
+      return Math.floor(totalRating / course.courseRatings.length)
+   }
+
    useEffect(() => {
       fetchAllCourses().then(r => {});
    }, [])
@@ -53,7 +71,7 @@ export const AppContextProvider = (props) => {
       userData, setUserData, getToken,
       allCourses, fetchAllCourses,
       enrolledCourses, isEducator,
-      setIsEducator
+      setIsEducator, calculateCourseRating
    }
    return (
       <AppContext.Provider value={value}>

@@ -16,7 +16,10 @@ export default function NavbarComponent() {
 
    async function becomeEducator() {
       try {
+         if (isEducator) {
+            navigate('/educator')
 
+         }
 
       } catch(err) {
 
@@ -45,7 +48,7 @@ export default function NavbarComponent() {
          {/* For Phone Screens */}
          <div className='md:hidden flex items-center gap-2 sm:gap-5 text-gray-500'>
             <div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
-               <button onClick={becomeEducator} className="add-cursor">{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>
+               <button onClick={becomeEducator} className="add-cursor">{isEducator ? 'My Dashboard' : 'Become Educator'}</button>
                | {
                user && <Link to='/enrollments' >My Enrollments</Link>
             }

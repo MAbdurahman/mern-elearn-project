@@ -429,8 +429,12 @@ export const dummyCourses = [
             },
             {
                 userId: "user8",
-                rating: 4
-            }
+                rating: 5
+            },
+           {
+              userId: "user9",
+              rating: 5
+           }
         ],
         enrolledStudents: [
 
