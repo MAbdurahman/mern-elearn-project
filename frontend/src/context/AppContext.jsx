@@ -2,6 +2,8 @@ import axios from "axios";
 import { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import {useAuth, useUser} from '@clerk/clerk-react';
+import humanizeDuration from 'humanize-duration';
 import {dummyCourses} from '../assets/assets.js';
 
 
@@ -11,7 +13,15 @@ export const AppContextProvider = (props) => {
    const backendURL = import.meta.env.VITE_BACKEND_URL;
    const currency = import.meta.env.VITE_CURRENCY;
 
-   const [allCourses, setAllCourses] = useState([])
+   const navigate = useNavigate();
+   const { getToken } = useAuth();
+   const { user } = useUser();
+
+   const [showLogin, setShowLogin] = useState(false);
+   const [isEducator,setIsEducator] = useState(false);
+   const [allCourses, setAllCourses] = useState([]);
+   const [userData, setUserData] = useState(null);
+   const [enrolledCourses, setEnrolledCourses] = useState([]);
 
 
 
@@ -38,7 +48,12 @@ export const AppContextProvider = (props) => {
    }, [])
 
    const value = {
-      currency, allCourses
+      showLogin, setShowLogin,
+      backendURL, currency, navigate,
+      userData, setUserData, getToken,
+      allCourses, fetchAllCourses,
+      enrolledCourses, isEducator,
+      setIsEducator
    }
    return (
       <AppContext.Provider value={value}>

@@ -20,9 +20,9 @@ export default function CourseCardComponent({course}) {
             <div className="flex items-center space-x-2">
                <p>4.5</p>
                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(5)].map((_, index) => (
                      <img
-                        key={i}
+                        key={index}
                         className="w-3.5 h-3.5"
                         src={assets.star}
                         alt="Star Rating icon"

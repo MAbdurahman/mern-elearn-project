@@ -19,6 +19,40 @@
    --font-size-home-heading-large-56: 56px;
 
 
+
+   --ease-basic-01: cubic-bezier(0.26, 0.1, 0.27, 1.55);
+   --ease-basic-02: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+   --ease: cubic-bezier(0.19, 0.08, 0.46, 0.99);
+   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+   --ease-in: cubic-bezier(0.33, 0.02, 0.84, 0.75);
+   --ease-out: cubic-bezier(0.05, 0.21, 0.66, 0.98);
+   --ease-in-out: cubic-bezier(0.38, 0, 0.57, 0.99);
+   --ease-linear: cubic-bezier(0.19, 0.08, 0.84, 0.75);
+   --ease-smooth: cubic-bezier(0.1, 0.7, 0.6, 0.9);
+   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+   --ease-snappy-01: cubic-bezier(0.5, 0, 0.4, 0.98);
+   --ease-snappy-02: cubic-bezier(.17, .67, .83, .67);
+
+   --radius-000: 1px;
+   --radius-100: 2px;
+   --radius-200: 3px;
+   --radius-300: 5px;
+   --radius-400: 8px;
+   --radius-500: 13px;
+   --radius-600: 21px;
+   --radius-700: 34px;
+   --radius-800: 55px;
+   --radius-900: 50%;
+
+   --breakpoint-xs: 480px;
+   --breakpoint-sm: 640px;
+   --breakpoint-md: 768px;
+   --breakpoint-lg: 1024px;
+   --breakpoint-xl: 1280px;
+   --breakpoint-2xl: 1536px;
+   --breakpoint-3xl: 1920px;
+
+
    --box-shadow-custom-card: 0px 4px 15px 2px rgba(0, 0, 0, 0.1);
 
    --max-width-course-card: 424px;
