@@ -5,6 +5,8 @@ import CourseSectionComponent
    from '../../components/student/CourseSectionComponent.jsx';
 import TestimonialSectionComponent
    from '../../components/student/TestimonialSectionComponent.jsx';
+import CallToActionComponent
+   from '../../components/student/CallToActionComponent.jsx';
 
 
 export default function HomePage() {
@@ -15,6 +17,7 @@ export default function HomePage() {
          <CompaniesComponent/>
          <CourseSectionComponent/>
          <TestimonialSectionComponent/>
+         <CallToActionComponent />
       </div>
 
    );

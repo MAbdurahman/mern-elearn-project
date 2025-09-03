@@ -9,7 +9,7 @@ export default function CourseSectionComponent() {
    const { allCourses} = useContext(AppContext);
 
    return (
-      <div className="py-16 md:px-40 px-8">
+      <div id='courses' className="py-16 md:px-40 px-8">
          <h2 className="text-4xl font-bold text-gray-800">Learn from the best</h2>
          <p className="md:text-base text-sm text-gray-500 mt-3">
             Discover our top-rated courses across various categories. From coding and design to<br /> business and wellness, our courses are crafted to deliver results.
