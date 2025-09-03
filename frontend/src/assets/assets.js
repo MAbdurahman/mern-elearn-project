@@ -93,7 +93,7 @@ export const assets = {
 
 export const dummyTestimonial = [
     {
-        name: 'Donald Jackman',
+        name: 'Donald Jackson',
         role: 'SWE 1 @ Amazon',
         image: assets.profile_img_1,
         rating: 5,

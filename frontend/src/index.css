@@ -175,6 +175,6 @@
    height: var(--spacing-section-height);
 }
 
-.grid-template-columns-auto {
+.grid-cols-auto {
    grid-template-columns: var(--grid-template-columns-auto);
 }
