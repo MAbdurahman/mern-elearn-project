@@ -7,6 +7,7 @@ import TestimonialSectionComponent
    from '../../components/student/TestimonialSectionComponent.jsx';
 import CallToActionComponent
    from '../../components/student/CallToActionComponent.jsx';
+import FooterComponent from '../../components/student/FooterComponent.jsx';
 
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
          <CourseSectionComponent/>
          <TestimonialSectionComponent/>
          <CallToActionComponent />
+         <FooterComponent/>
       </div>
 
    );
