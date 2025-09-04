@@ -23,18 +23,18 @@ export default function FooterComponent() {
                <ul className='flex md:flex-col w-full justify-between text-sm text-white/80 md:space-y-2'>
                   <li><a href="#home">Home</a></li>
                   <li><a href="#">About us</a></li>
-                  <li><a href="#">Courses</a></li>
+                  <li><a href="#courses">Courses</a></li>
                   <li><a href="#">Contact us</a></li>
                </ul>
             </div>
 
             <div className='hidden md:flex flex-col justify-items-center-safe w-full'>
-               <h3 className='font-semibold text-white mb-5'>Subscribe to our newsletter</h3>
+               <h3 className='font-semibold text-white mb-5'>Subscribe to Our Newsletter</h3>
                <p className='text-sm text-white/80'>
                   The latest news, articles, and resources, sent to your inbox weekly.
                </p>
                <div className='flex items-center gap-2 pt-4'>
-                  <input className='border border-gray-500/30 bg-gray-800 text-gray-500 placeholder-gray-500 outline-none w-64 h-9 rounded px-2 text-sm' type='email' placeholder='Enter your email' />
+                  <input className='border border-gray-500/30 bg-gray-800 text-gray-300 placeholder-gray-500 outline-none w-64 h-9 rounded px-2 text-sm' type='email' placeholder='Enter your email' />
                   <button className='bg-blue-600 w-24 h-9 text-white rounded'>Subscribe</button>
                </div>
             </div>
