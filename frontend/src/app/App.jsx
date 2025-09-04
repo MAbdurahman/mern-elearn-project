@@ -14,6 +14,7 @@ import DashboardPage from '../pages/educator/DashboardPage.jsx';
 import AddCoursePage from '../pages/educator/AddCoursePage.jsx';
 import CoursesPage from '../pages/educator/CoursesPage.jsx';
 import StudentsEnrolledPage from '../pages/educator/StudentsEnrolledPage.jsx';
+import NotFoundErrorPage from '../pages/error/NotFoundErrorPage.jsx';
 
 
 export default function App() {
@@ -32,11 +33,12 @@ export default function App() {
             <Route path="/player/:courseId" element={<PlayerPage />} />
             <Route path="/loading/:path" element={<LoadingComponent />} />
             <Route path="/educator" element={<EducatorPage />} >
-               <Route path="educator" element={<DashboardPage />} />
+               <Route path="dashboard" element={<DashboardPage />} />
                <Route path="add-course" element={<AddCoursePage />} />
                <Route path="courses" element={<CoursesPage />} />
                <Route path="students-enrolled" element={<StudentsEnrolledPage />} />
             </Route>
+            <Route path="*" element={<NotFoundErrorPage />} />
          </Routes>
       </div>
 
