@@ -21,7 +21,7 @@ export default function FooterComponent() {
             <div className='flex flex-col md:items-start items-center w-full'>
                <h3 className='font-semibold text-white mb-5'>Company</h3>
                <ul className='flex md:flex-col w-full justify-between text-sm text-white/80 md:space-y-2'>
-                  <li><a href="#">Home</a></li>
+                  <li><a href="#home">Home</a></li>
                   <li><a href="#">About us</a></li>
                   <li><a href="#">Courses</a></li>
                   <li><a href="#">Contact us</a></li>
@@ -29,7 +29,7 @@ export default function FooterComponent() {
             </div>
 
             <div className='hidden md:flex flex-col justify-items-center-safe w-full'>
-               <h2 className='font-semibold text-white mb-5'>Subscribe to our newsletter</h2>
+               <h3 className='font-semibold text-white mb-5'>Subscribe to our newsletter</h3>
                <p className='text-sm text-white/80'>
                   The latest news, articles, and resources, sent to your inbox weekly.
                </p>
@@ -40,7 +40,7 @@ export default function FooterComponent() {
             </div>
 
          </div>
-         <p className='pt-4 pb-2 text-center text-xs md:text-sm text-white/60'>
+         <p className='pt-4 pb-3 text-center text-xs md:text-sm text-white/60'>
             Copyright {year} Edemy,Inc., All Rights Reserved.
             <a href='#' className='block pb-8 text-center text-xs text-white/40'>Privacy policy | Terms and Conditions</a>
          </p>
