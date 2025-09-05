@@ -8,7 +8,7 @@ export default function FooterComponent() {
    let year = date.getFullYear();
 
    return (
-      <footer className='bg-gray-900 md:px-36 text-left w-full mt-10'>
+      <footer className='fixed bottom-0 left-0 bg-gray-900 md:px-36 text-left w-full mt-10'>
          <div className='flex flex-col md:items-start px-8 md:px-0 justify-center gap-10 md:gap-8 py-10 border-b border-white/30 xl:flex xl:flex-row xl:gap-20'>
 
             <div className='flex flex-col md:items-start items-center w-full'>

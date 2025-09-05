@@ -4,6 +4,7 @@ import {AppContext} from '../../context/AppContext.jsx';
 import CourseCardComponent from '../../components/student/CourseCardComponent.jsx';
 import SearchBarComponent from '../../components/student/SearchBarComponent.jsx';
 import FooterComponent from '../../components/student/FooterComponent.jsx';
+import NoResultsErrorPage from '../error/NoResultsErrorPage.jsx';
 import {assets} from '../../assets/assets.js';
 
 
@@ -28,7 +29,9 @@ export default function CourseListPage() {
 
       }
 
+
    }, [allCourses, input])
+
 
    return (
       <Fragment>
