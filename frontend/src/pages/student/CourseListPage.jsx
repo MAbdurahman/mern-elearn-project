@@ -33,7 +33,7 @@ export default function CourseListPage() {
    }, [allCourses, input])
 
 
-   return (
+   return filteredCourse && filteredCourse.length > 0 ?(
       <Fragment>
          <div className="relative md:px-36 px-8 pt-20 text-left">
             <div className='flex md:flex-row flex-col gap-6 items-start justify-between w-full'>
@@ -52,7 +52,5 @@ export default function CourseListPage() {
             </div>
          </div>
          <FooterComponent />
-      </Fragment>
-
-   );
+      </Fragment>) : (<NoResultsErrorPage />);
 }
