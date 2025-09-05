@@ -15,6 +15,7 @@ import AddCoursePage from '../pages/educator/AddCoursePage.jsx';
 import CoursesPage from '../pages/educator/CoursesPage.jsx';
 import StudentsEnrolledPage from '../pages/educator/StudentsEnrolledPage.jsx';
 import NotFoundErrorPage from '../pages/error/NotFoundErrorPage.jsx';
+import NoResultsErrorPage from '../pages/error/NoResultsErrorPage.jsx';
 
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
                <Route path="courses" element={<CoursesPage />} />
                <Route path="students-enrolled" element={<StudentsEnrolledPage />} />
             </Route>
+            <Route path="/no-results" element={<NoResultsErrorPage />} />
             <Route path="*" element={<NotFoundErrorPage />} />
          </Routes>
       </div>
