@@ -14,8 +14,8 @@ export const AppContextProvider = (props) => {
    const currency = import.meta.env.VITE_CURRENCY;
 
    const navigate = useNavigate();
-   const { getToken } = useAuth();
-   const { user } = useUser();
+   const {getToken} = useAuth();
+   const {user} = useUser();
 
    const [showLogin, setShowLogin] = useState(false);
    const [isEducator,setIsEducator] = useState(true);
@@ -24,6 +24,7 @@ export const AppContextProvider = (props) => {
    const [enrolledCourses, setEnrolledCourses] = useState([]);
 
 
+   console.log(dummyCourses)
 
    const fetchAllCourses = async () => {
       setAllCourses(dummyCourses);
@@ -61,9 +62,13 @@ export const AppContextProvider = (props) => {
       return Math.floor(totalRating / course.courseRatings.length)
    }
 
+   const calculateNumberOfLectures = (course) => {
+      console.log('calculateNumberOfLectures', course);
+   }
+
    useEffect(() => {
-      fetchAllCourses().then(r => {});
-   }, [])
+      fetchAllCourses().then(response => {});
+   }, []);
 
    const value = {
       showLogin, setShowLogin,
@@ -71,7 +76,8 @@ export const AppContextProvider = (props) => {
       userData, setUserData, getToken,
       allCourses, fetchAllCourses,
       enrolledCourses, isEducator,
-      setIsEducator, calculateCourseRating
+      setIsEducator, calculateCourseRating,
+      calculateNumberOfLectures
    }
    return (
       <AppContext.Provider value={value}>
