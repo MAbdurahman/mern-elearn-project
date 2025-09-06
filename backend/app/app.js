@@ -39,9 +39,11 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 /*************************** import all routes ***************************/
 import homeRoute from '../routes/homePageRoute.js';
+import clerkRoute from '../routes/clerkRoute.js';
 
 /********************************* routes *********************************/
 app.use('/api/v1.0/', homeRoute);
+app.use('/api/v1.0/clerk', clerkRoute);
 
 
 export default app;

@@ -28,16 +28,7 @@ const userSchema = new Schema({
          unique: [true, 'Email already exists!'],
          match: [email_pattern, 'Enter a valid email!']
       },
-      image: [{
-         public_id: {
-            type: String,
-            required: true
-         },
-         url: {
-            type: String,
-            required: true
-         }
-      }],
+      imageURL: { type: String, required: true },
       enrolledCourses: [
          {
             type: Schema.Types.ObjectId,
