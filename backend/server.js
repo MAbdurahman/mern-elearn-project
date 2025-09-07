@@ -28,7 +28,7 @@ connectDatabase().then(() => {});
 
 /********************************** app listening *********************************/
 const server = app.listen(PORT, () => {
-   console.log(`  ➔  Server:  Listening at http://127.0.0.1:${PORT}${API_URL} in ${NODE_ENV} mode!`.yellow);
+   console.log(`  ➔  Server:  Listening at port ${PORT} in ${NODE_ENV} mode!`.yellow);
    console.log(ADDENDUM);
 });
 

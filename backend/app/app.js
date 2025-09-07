@@ -35,6 +35,7 @@ app.use(
    })
 );
 app.use(express.json()); // for parsing application/json
+app.use(express.raw({ type: 'application/json' }));
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 /*************************** import all routes ***************************/
@@ -42,8 +43,8 @@ import homeRoute from '../routes/homePageRoute.js';
 import clerkRoute from '../routes/clerkRoute.js';
 
 /********************************* routes *********************************/
-app.use('/api/v1.0/', homeRoute);
-app.use('/api/v1.0/clerk', clerkRoute);
+app.use('/', homeRoute);
+app.use('/clerk', clerkRoute);
 
 
 export default app;

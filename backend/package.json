@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
+  "description": "MongoDB, ExpressJS, and NodeJS",
   "repository": "https://github.com/MAbdurahman/mern-elearn-project.git",
   "author": "Mahdi Abdurrahman",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.5.1",
     "colors": "^1.4.0",
+    "concurrently": "^9.2.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -27,13 +29,11 @@
     "mongoose": "^8.8.4",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
+    "nodemon": "^3.1.10",
     "stripe": "^17.5.0",
     "svix": "^1.42.0"
   },
-  "devDependencies": {
-    "concurrently": "^9.2.0",
-    "nodemon": "^3.1.10"
-  },
+  "devDependencies": {},
   "nodemonConfig": {
     "delay": 2000
   }
