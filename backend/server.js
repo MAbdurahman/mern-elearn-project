@@ -6,7 +6,7 @@ import connectDatabase from './configs/databaseConfig.js';
 import connectCloudinary from './configs/cloudinaryConfig.js';
 
 /************************* configure setup *************************/
-dotenv.config({path: 'backend/configs/config.env'});
+dotenv.config({path: './configs/config.env'});
 colors.enabled = true;
 
 /************************* handling Uncaught exceptions *************************/

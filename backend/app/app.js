@@ -8,7 +8,7 @@ import morgan from 'morgan';
 
 /************************* setup config file *************************/
 if (process.env.NODE_ENV !== 'production') {
-   dotenv.config({path: 'backend/configs/config.env'});
+   dotenv.config({path: './configs/config.env'});
 }
 
 /***************************** variables *****************************/
