@@ -41,7 +41,7 @@ export const AppContextProvider = (props) => {
       }*/
    }
 
-   const logToke = async() => {
+  /* const logToke = async() => {
       console.log(await getToken())
    }
    useEffect(() => {
@@ -49,7 +49,7 @@ export const AppContextProvider = (props) => {
          logToke().then(r => {});
       }
 
-   }, [user]);
+   }, [user]);*/
 
 
    /**
