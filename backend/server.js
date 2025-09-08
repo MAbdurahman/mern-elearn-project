@@ -25,7 +25,7 @@ const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000/api/v1.0/'
 
 /************************* connect MongoDB and Cloudinary *************************/
 connectDatabase().then(() => {});
-// connectCloudinary().then(() => {});
+connectCloudinary().then(() => {});
 
 /********************************** app listening *********************************/
 const server = app.listen(PORT, () => {

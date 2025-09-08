@@ -1,6 +1,12 @@
 import { Webhook } from "svix";
 import User from '../models/userModel.js';
 
+/**
+ * clerkWebhooks - manages clerk user with database
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 export const clerkWebhooks = async (req, res) => {
    try {
       const clerkWebhook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);

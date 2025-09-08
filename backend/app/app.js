@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import {clerkMiddleware} from '@clerk/express';
 
 /************************* setup config file *************************/
 if (process.env.NODE_ENV !== 'production') {
@@ -34,6 +35,7 @@ app.use(
       credentials: true,
    })
 );
+app.use(clerkMiddleware());
 app.use(express.json()); // for parsing application/json
 app.use(express.raw({ type: 'application/json' }));
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -41,10 +43,13 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 /*************************** import all routes ***************************/
 import homeRoute from '../routes/homePageRoute.js';
 import clerkRoute from '../routes/clerkRoute.js';
+import educatorRoutes from '../routes/educatorRoutes.js';
+
 
 /********************************* routes *********************************/
 app.use('/', homeRoute);
 app.use('/clerk', clerkRoute);
+app.use('/api/educator', educatorRoutes);
 
 
 export default app;

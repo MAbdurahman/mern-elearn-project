@@ -23,9 +23,6 @@ export const AppContextProvider = (props) => {
    const [userData, setUserData] = useState(null);
    const [enrolledCourses, setEnrolledCourses] = useState([]);
 
-
-   console.log(dummyCourses)
-
    const fetchAllCourses = async () => {
       setAllCourses(dummyCourses);
 
@@ -43,6 +40,17 @@ export const AppContextProvider = (props) => {
          toast.error(error.message)
       }*/
    }
+
+   const logToke = async() => {
+      console.log(await getToken())
+   }
+   useEffect(() => {
+      if (user) {
+         logToke().then(r => {});
+      }
+
+   }, [user]);
+
 
    /**
     * calculateCourseRating - calculates the average rating of the course
