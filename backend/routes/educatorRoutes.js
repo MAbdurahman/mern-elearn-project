@@ -1,3 +1,4 @@
+/************************** imports **************************/
 import express from 'express';
 import {
    addNewCourse, getEducatorCourses, getEducatorDashboardData,
@@ -7,10 +8,10 @@ import {
 import upload from '../configs/multerConfig.js';
 import {authenticateEducator} from '../middlewares/authMiddleware.js';
 
-
+/************************* variable *************************/
 const router = express.Router();
 
-/************************* routes *************************/
+/************************** routes **************************/
 router.get('/update-role', updateRoleToEducator);
 router.post('/add-course', upload.single('image'), authenticateEducator, addNewCourse);
 router.get('/courses', authenticateEducator, getEducatorCourses);
