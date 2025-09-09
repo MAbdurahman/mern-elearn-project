@@ -44,12 +44,14 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 import homeRoute from '../routes/homePageRoute.js';
 import clerkRoute from '../routes/clerkRoute.js';
 import educatorRoutes from '../routes/educatorRoutes.js';
+import courseRoutes from '../routes/courseRoutes.js';
 
 
 /********************************* routes *********************************/
 app.use('/', homeRoute);
 app.use('/clerk', clerkRoute);
 app.use('/api/educator', educatorRoutes);
+app.use('/api/course', courseRoutes);
 
 
 export default app;
