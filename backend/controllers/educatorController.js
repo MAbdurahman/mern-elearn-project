@@ -26,10 +26,13 @@ export const updateRoleToEducator = asyncHandler(async (req, res) => {
    }
 });
 
-
+/**
+ * addNewCourse - add and creates a new course
+ * @type {(function(*, *, *): void)|*}
+ */
 export const addNewCourse = asyncHandler(async (req, res) => {
    try {
-      const { courseData } = req.body;
+      const {courseData} = req.body;
       const imageFile = req.file;
       const educatorId = req.auth.userId;
 
@@ -37,27 +40,95 @@ export const addNewCourse = asyncHandler(async (req, res) => {
          return res.json({ success: false, message: 'CourseThumbnail - error uploading image file!' });
       }
 
-      const parsedCourseData = await JSON.parse(courseData)
-
+      const parsedCourseData = await JSON.parse(courseData);
       parsedCourseData.educator = educatorId;
 
       const newCourse = await Course.create(parsedCourseData);
 
-      const imageUpload = await cloudinary.uploader.upload(imageFile.path)
+      const imageUpload = await cloudinary.uploader.upload(imageFile.path, {
+         folder: 'mern-elearn/courses'
+      });
 
-      /*newCourse.courseThumbnail.url = imageUpload.secure_url;
-      newCourse.courseThumbnail.public_id = imageUpload.public_id;*/
-      
       newCourse.courseThumbnail = {
          public_id: imageUpload.public_id,
          url: imageUpload.secure_url
       }
 
-      await newCourse.save()
+      await newCourse.save();
 
-      res.json({ success: true, message: 'New course successfully added!' });
+      res.json({ success: true, message: 'New course successfully added!'});
 
    } catch(err) {
       res.json({ success: false, message: err.message });
    }
+});
+
+/**
+ * getEducatorCourses = retrieves educator's courses
+ * @type {(function(*, *, *): void)|*}
+ */
+export const getEducatorCourses = asyncHandler(async (req, res) => {
+   try {
+
+      const educatorId = req.auth.userId
+
+      const courses = await Course.find({educatorId});
+
+      res.json({ success: true, courses });
+
+   } catch (err) {
+      res.json({ success: false, message: err.message });
+   }
+});
+
+/**
+ * getEducatorDashboardData -
+ * @type {(function(*, *, *): void)|*}
+ */
+export const getEducatorDashboardData = asyncHandler(async (req, res) => {
+
+   try {
+      const educatorId = req.auth.userId;
+
+      const courses = await Course.find({educatorId});
+
+      const totalCourses = courses.length;
+
+      const courseIds = courses.map(course => course._id);
+
+      // Calculate total earnings from purchases
+      const purchases = await Purchase.find({
+         courseId: { $in: courseIds },
+         status: 'completed'
+      });
+
+      const totalEarnings = purchases.reduce((sum, purchase) => sum + purchase.amount, 0);
+
+      // Collect unique enrolled student IDs with their course titles
+      const enrolledStudentsData = [];
+      for (const course of courses) {
+         const students = await User.find({
+            _id: { $in: course.enrolledStudents }
+         }, 'name imageURL');
+
+         students.forEach(student => {
+            enrolledStudentsData.push({
+               courseTitle: course.courseTitle,
+               student
+            });
+         });
+      }
+
+      res.json({
+         success: true,
+         dashboardData: {
+            totalEarnings,
+            enrolledStudentsData,
+            totalCourses
+         }
+      });
+   } catch (err) {
+      res.json({ success: false, message: err.message });
+   }
+
 });
