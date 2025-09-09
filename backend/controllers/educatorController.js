@@ -89,9 +89,7 @@ export const getEducatorDashboardData = asyncHandler(async (req, res) => {
 
    try {
       const educatorId = req.auth.userId;
-
       const courses = await Course.find({educatorId});
-
       const totalCourses = courses.length;
 
       const courseIds = courses.map(course => course._id);
@@ -133,6 +131,10 @@ export const getEducatorDashboardData = asyncHandler(async (req, res) => {
 
 });
 
+/**
+ * getEnrolledStudentsData -
+ * @type {(function(*, *, *): void)|*}
+ */
 export const getEnrolledStudentsData = asyncHandler(async (req, res) => {
    try {
       const educatorId = req.auth.userId;
