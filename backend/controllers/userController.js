@@ -4,10 +4,27 @@ import CourseProgress from '../models/courseProgressModel.js';
 import Purchase from '../models/purchaseModel.js';
 import asyncHandler from '../utils/asyncHandlerUtils.js';
 
-
+/**
+ * retrieveUserData -
+ * @type {(function(*, *, *): void)|*}
+ */
 export const retrieveUserData = asyncHandler(async (req, res) => {
-   res.json({success: true, message: 'User Retrieved Successfully'});
+   try {
+      const userId = req.auth.userId
+
+      const user = await User.findById(userId);
+
+      if (!user) {
+         return res.json({ success: false, message: 'User Not Found' });
+      }
+
+      res.json({ success: true, message: 'User successfully found!', user });
+
+   } catch (error) {
+      res.json({ success: false, message: error.message });
+   }
 });
+
 
 export const purchaseUserCourse = asyncHandler(async (req, res) => {
    res.json({success: true, message: 'Purchase Course'});
