@@ -45,6 +45,7 @@ import homeRoute from '../routes/homePageRoute.js';
 import clerkRoute from '../routes/clerkRoute.js';
 import educatorRoutes from '../routes/educatorRoutes.js';
 import courseRoutes from '../routes/courseRoutes.js';
+import userRoutes from '../routes/userRoutes.js';
 
 
 /********************************* routes *********************************/
@@ -52,6 +53,7 @@ app.use('/', homeRoute);
 app.use('/clerk', clerkRoute);
 app.use('/api/educator', educatorRoutes);
 app.use('/api/course', courseRoutes);
+app.use('/api/user', userRoutes);
 
 
 export default app;
