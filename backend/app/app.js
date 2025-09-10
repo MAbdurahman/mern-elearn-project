@@ -46,11 +46,12 @@ import clerkRoute from '../routes/clerkRoute.js';
 import educatorRoutes from '../routes/educatorRoutes.js';
 import courseRoutes from '../routes/courseRoutes.js';
 import userRoutes from '../routes/userRoutes.js';
-
+import stripeRoute from '../routes/stripeRoute.js';
 
 /********************************* routes *********************************/
 app.use('/', homeRoute);
 app.use('/clerk', clerkRoute);
+app.use('/stripe', stripeRoute);
 app.use('/api/educator', educatorRoutes);
 app.use('/api/course', courseRoutes);
 app.use('/api/user', userRoutes);

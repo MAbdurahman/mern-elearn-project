@@ -57,5 +57,10 @@ export const clerkWebhooks = async (req, res) => {
    } catch(err) {
       res.json({ success: false, message: err.message });
    }
+}
 
+
+export const stripeWebhooks = async (req, res) => {
+
+   res.json({success: true, message: 'Stripe webhooks'});
 }
