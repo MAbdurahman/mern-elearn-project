@@ -11,7 +11,6 @@ import asyncHandler from '../utils/asyncHandlerUtils.js';
 export const retrieveUserData = asyncHandler(async (req, res) => {
    try {
       const userId = req.auth.userId
-
       const user = await User.findById(userId);
 
       if (!user) {
@@ -20,8 +19,8 @@ export const retrieveUserData = asyncHandler(async (req, res) => {
 
       res.json({ success: true, message: 'User successfully found!', user });
 
-   } catch (error) {
-      res.json({ success: false, message: error.message });
+   } catch (err) {
+      res.json({ success: false, message: err.message });
    }
 });
 
@@ -31,7 +30,16 @@ export const purchaseUserCourse = asyncHandler(async (req, res) => {
 });
 
 export const retrieveUserEnrolledCourses = asyncHandler(async (req, res) => {
-   res.json({success: true, message: 'User Enrolled Courses'});
+   try {
+      const userId = req.auth.userId;
+      const userData = await User.findById(userId)
+         .populate('enrolledCourses');
+
+      res.json({ success: true, enrolledCourses: userData.enrolledCourses });
+
+   } catch (err) {
+      res.json({ success: false, message: err.message });
+   }
 });
 
 export const updateUserCourseProgress = asyncHandler(async (req, res) => {
