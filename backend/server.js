@@ -29,7 +29,7 @@ connectCloudinary().then(() => {});
 
 /********************************** app listening *********************************/
 const server = app.listen(PORT, () => {
-   console.log(`  ➔  Server:  Listening at ${BACKEND_URL}:${PORT} in ${NODE_ENV} mode!`.yellow);
+   console.log(`  ➔  Server:  Listening at ${BACKEND_URL} in ${NODE_ENV} mode!`.yellow);
    console.log(ADDENDUM);
 });
 
