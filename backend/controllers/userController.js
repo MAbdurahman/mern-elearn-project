@@ -141,8 +141,22 @@ export const updateUserCourseProgress = asyncHandler(async (req, res) => {
    }
 });
 
+/**
+ * retrieveUserCourseProgess -
+ * @type {(function(*, *, *): void)|*}
+ */
 export const retrieveUserCourseProgress = asyncHandler(async (req, res) => {
-   res.json({success: true, message: 'User Enrolled Course Progress'});
+   try {
+      const userId = req.auth.userId;
+      const {courseId} = req.body;
+
+      const progressData = await CourseProgress.findOne({userId, courseId});
+
+      res.json({success: true, message: 'Successfully retrieved User Course Progess!', progressData});
+
+   } catch (err) {
+      res.json({success: false, message: err.message});
+   }
 });
 
 export const addUserCourseRating = asyncHandler(async (req, res) => {
