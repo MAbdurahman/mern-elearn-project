@@ -159,6 +159,50 @@ export const retrieveUserCourseProgress = asyncHandler(async (req, res) => {
    }
 });
 
+/**
+ * addUserCourseRating -
+ * @type {(function(*, *, *): void)|*}
+ */
 export const addUserCourseRating = asyncHandler(async (req, res) => {
-   res.json({success: true, message: 'Add User Rating'});
+
+   const userId = req.auth.userId;
+   const {courseId, rating} = req.body;
+
+
+   if (!courseId || !userId || !rating || rating < 1 || rating > 5) {
+      return res.json({success: false, message: 'InValid Details'});
+   }
+
+   try {
+      const course = await Course.findById(courseId);
+      if (!course) {
+         return res.json({success: false, message: 'Course not found!'});
+      }
+
+      const user = await User.findById(userId);
+      if (!user || !user.enrolledCourses.includes(courseId)) {
+         return res.json({success: false, message: 'User has not purchased this course!' });
+      }
+
+      // Check whether user has already rated course
+      const existingRatingIndex = course.courseRatings.findIndex(r => r.userId === userId);
+
+      if (existingRatingIndex > -1) {
+         // Update the existing rating
+         course.courseRatings[existingRatingIndex].rating = rating;
+
+      } else {
+         // Add a new rating
+         course.courseRatings.push({ userId, rating });
+
+      }
+
+      await course.save();
+
+      return res.json({success: true, message: 'User rating successfully added!'});
+
+   } catch (err) {
+      return res.json({success: false, message: err.message});
+
+   }
 });
