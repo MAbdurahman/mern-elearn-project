@@ -75,6 +75,27 @@ export const AppContextProvider = (props) => {
       }
    }
 
+   /**
+    * fetchUserEnrolledCourses -
+    * @returns {Promise<void>}
+    */
+   const fetchUserEnrolledCourses = async () => {
+
+      const token = await getToken();
+
+      const { data } = await axios.get(backendURL + '/api/user/enrolled-courses',
+         { headers: { Authorization: `Bearer ${token}` } })
+
+      if (data.success) {
+         setEnrolledCourses(data.enrolledCourses.reverse());
+
+      } else (
+         toast.error(data.message)
+
+      )
+
+   }
+
 
    /**
     * calculateCourseRating - calculates the average rating of the course
@@ -105,6 +126,7 @@ export const AppContextProvider = (props) => {
    useEffect(() => {
       if (user) {
          fetchUserData().then(response =>{});
+         fetchUserEnrolledCourses().then(response => {});
 
       }
    }, [user]);
@@ -114,8 +136,8 @@ export const AppContextProvider = (props) => {
       backendURL, currency, navigate,
       userData, setUserData, getToken,
       allCourses, fetchAllCourses,
-      enrolledCourses, isEducator,
-      setIsEducator, calculateCourseRating,
+      enrolledCourses, fetchUserEnrolledCourses,
+      isEducator, setIsEducator, calculateCourseRating,
       calculateNumberOfLectures
    }
    return (
