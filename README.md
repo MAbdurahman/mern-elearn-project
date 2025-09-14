@@ -47,6 +47,11 @@ PAYPAL_CLIENT_ID=
 PAYPAL_SECRET_KEY=
 PAYPAL_API_URL=
 
+# Miscellaneous
+in config folder create configPlaceholder.js
+add export const api_key_placeholder
+Read documentation for npm Strike above version 17.0.0
+
 ```
 ### Start the app
 ```shell

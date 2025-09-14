@@ -30,6 +30,8 @@ config.env
 .eslintcache
 /.eslintcache
 
+configPlaceholder.js
+
 # Logs
 logs
 *.log
