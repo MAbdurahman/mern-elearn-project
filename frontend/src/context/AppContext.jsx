@@ -24,21 +24,20 @@ export const AppContextProvider = (props) => {
    const [enrolledCourses, setEnrolledCourses] = useState([]);
 
    const fetchAllCourses = async () => {
-      setAllCourses(dummyCourses);
+      try {
 
-/*      try {
-
-         const { data } = await axios.get(backendURL + '/api/course/all');
+         const {data} = await axios.get(backendURL + '/api/course/all-courses');
 
          if (data.success) {
-            setAllCourses(data.courses)
+            setAllCourses(data.courses);
+
          } else {
-            toast.error(data.message)
+            toast.error(data.message);
          }
 
-      } catch (error) {
-         toast.error(error.message)
-      }*/
+      } catch (err) {
+         toast.error(err.message);
+      }
    }
 
   /* const logToke = async() => {

@@ -23,24 +23,25 @@ export default function App() {
    const isEducatorRoute = useMatch('/educator/*');
 
    return (
-      <div className="text-default min-h-screen bg-white">
+      <div className='text-default min-h-screen bg-white'>
+         <ToastContainer />
          {!isEducatorRoute && <NavbarComponent />}
          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/course/:courseId" element={<CourseDetailsPage />} />
-            <Route path="/course-list" element={<CourseListPage />} />
-            <Route path="/course-list/:input" element={<CourseListPage />} />
-            <Route path="/enrollments" element={<EnrollmentsPage />} />
-            <Route path="/player/:courseId" element={<PlayerPage />} />
-            <Route path="/loading/:path" element={<LoadingComponent />} />
-            <Route path="/educator" element={<EducatorPage />} >
-               <Route path="dashboard" element={<DashboardPage />} />
-               <Route path="add-course" element={<AddCoursePage />} />
-               <Route path="courses" element={<CoursesPage />} />
-               <Route path="students-enrolled" element={<StudentsEnrolledPage />} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='/course/:courseId' element={<CourseDetailsPage />} />
+            <Route path='/course-list' element={<CourseListPage />} />
+            <Route path='/course-list/:input' element={<CourseListPage />} />
+            <Route path='/enrollments' element={<EnrollmentsPage />} />
+            <Route path='/player/:courseId' element={<PlayerPage />} />
+            <Route path='/loading/:path' element={<LoadingComponent />} />
+            <Route path='/educator' element={<EducatorPage />} >
+               <Route path='dashboard' element={<DashboardPage />} />
+               <Route path='add-course' element={<AddCoursePage />} />
+               <Route path='courses' element={<CoursesPage />} />
+               <Route path='students-enrolled' element={<StudentsEnrolledPage />} />
             </Route>
-            <Route path="/no-results" element={<NoResultsErrorPage />} />
-            <Route path="*" element={<NotFoundErrorPage />} />
+            <Route path='/no-results' element={<NoResultsErrorPage />} />
+            <Route path='*' element={<NotFoundErrorPage />} />
          </Routes>
       </div>
 
