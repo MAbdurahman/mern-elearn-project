@@ -112,12 +112,11 @@ export const updateUserCourseProgress = asyncHandler(async (req, res) => {
    try {
 
       const userId = req.auth.userId;
-      const { courseId, lectureId } = req.body;
+      const {courseId, lectureId} = req.body;
 
       const progressData = await CourseProgress.findOne({ userId, courseId });
 
       if (progressData) {
-
          if (progressData.lectureCompleted.includes(lectureId)) {
             return res.json({success: true, message: 'Lecture has been already completed!!'});
          }
@@ -134,7 +133,7 @@ export const updateUserCourseProgress = asyncHandler(async (req, res) => {
 
       }
 
-      res.json({ success: true, message: 'Successfully updated Course Progress!' });
+      res.json({success: true, message: 'Successfully updated Course Progress!'});
 
    } catch (err) {
       res.json({success: false, message: err.message});
@@ -181,7 +180,7 @@ export const addUserCourseRating = asyncHandler(async (req, res) => {
 
       const user = await User.findById(userId);
       if (!user || !user.enrolledCourses.includes(courseId)) {
-         return res.json({success: false, message: 'User has not purchased this course!' });
+         return res.json({success: false, message: 'User has not purchased this course!'});
       }
 
       // Check whether user has already rated course
