@@ -56,5 +56,4 @@ app.use('/api/educator', educatorRoutes);
 app.use('/api/course', courseRoutes);
 app.use('/api/user', userRoutes);
 
-
 export default app;
