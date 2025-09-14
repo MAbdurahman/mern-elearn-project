@@ -19,6 +19,14 @@ export const updateRoleToEducator = asyncHandler(async (req, res) => {
          },
       });
 
+      // Need to change on the User model in database
+      const user = await User.findById(userId);
+      if (!user) {
+         return res.json({success: false, message: 'User not found!'});
+      }
+      user.role = 'educator';
+      await user.save();
+
       res.json({ success: true, message: 'User role has been updated successfully!' });
 
    } catch (err) {

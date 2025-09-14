@@ -18,11 +18,15 @@ export const AppContextProvider = (props) => {
    const {user} = useUser();
 
    const [showLogin, setShowLogin] = useState(false);
-   const [isEducator,setIsEducator] = useState(true);
+   const [isEducator,setIsEducator] = useState(false);
    const [allCourses, setAllCourses] = useState([]);
    const [userData, setUserData] = useState(null);
    const [enrolledCourses, setEnrolledCourses] = useState([]);
 
+   /**
+    * fetchAllCourses -
+    * @returns {Promise<void>}
+    */
    const fetchAllCourses = async () => {
       try {
 
@@ -40,15 +44,36 @@ export const AppContextProvider = (props) => {
       }
    }
 
-  /* const logToke = async() => {
-      console.log(await getToken())
-   }
-   useEffect(() => {
-      if (user) {
-         logToke().then(r => {});
-      }
+   /**
+    * fetchUserData -
+    * @returns {Promise<void>}
+    */
+   const fetchUserData = async () => {
+      try {
 
-   }, [user]);*/
+         if (user.publicMetadata.role === 'educator') {
+            setIsEducator(true);
+
+         }
+
+         const token = await getToken();
+
+         const {data} = await axios.get(backendURL + '/api/user/retrieve-data',
+            { headers: { Authorization: `Bearer ${token}` } });
+
+         if (data.success) {
+            setUserData(data.user);
+
+         } else (
+            toast.error(data.message)
+
+         )
+
+      } catch (err) {
+         toast.error(err.message);
+
+      }
+   }
 
 
    /**
@@ -76,6 +101,13 @@ export const AppContextProvider = (props) => {
    useEffect(() => {
       fetchAllCourses().then(response => {});
    }, []);
+
+   useEffect(() => {
+      if (user) {
+         fetchUserData().then(response =>{});
+
+      }
+   }, [user]);
 
    const value = {
       showLogin, setShowLogin,
