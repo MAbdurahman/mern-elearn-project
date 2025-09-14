@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV;
 const API_URL = process.env.API_ENV || '/api/v1.0/';
 const ADDENDUM = `\t\t...press Ctrl-C to terminate.\n`.white;
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000/api/v1.0/';
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000';
 
 /************************* connect MongoDB and Cloudinary *************************/
 connectDatabase().then(() => {});
@@ -29,7 +29,7 @@ connectCloudinary().then(() => {});
 
 /********************************** app listening *********************************/
 const server = app.listen(PORT, () => {
-   console.log(`  ➔  Server:  Listening at ${BACKEND_URL} in ${NODE_ENV} mode!`.yellow);
+   console.log(`  ➔  Server:  Listening at ${BACKEND_URL}:${PORT} in ${NODE_ENV} mode!`.yellow);
    console.log(ADDENDUM);
 });
 

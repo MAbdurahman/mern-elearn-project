@@ -3,6 +3,7 @@ import stripe from 'stripe';
 import User from '../models/userModel.js';
 import Course from '../models/courseModel.js';
 import Purchase from '../models/purchaseModel.js';
+import {api_key_placeholder} from '../configs/configPlaceholder.js';
 
 /**
  * clerkWebhooks - manages clerk user with database
@@ -63,7 +64,7 @@ export const clerkWebhooks = async (req, res) => {
 }
 
 // Stripe Gateway Initialize
-const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
+const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY || api_key_placeholder);
 
 export const stripeWebhooks = async (req, res) => {
    const sig = request.headers['stripe-signature'];

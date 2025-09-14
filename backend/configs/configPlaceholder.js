@@ -1,0 +1,1 @@
+export const api_key_placeholder = process.env.STRIPE_SECRET_KEY || 'sk_test_51S66WiLQ6TRiVJ8L7tQcTm8tQErVNjcgbIkGZUOw6PN6M7cgqYPThP6Zm66IFTqiBnChq76KbyRNVHvTDD29Wt3b00uMwFa8t9';
