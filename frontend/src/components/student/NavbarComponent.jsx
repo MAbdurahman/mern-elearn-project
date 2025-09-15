@@ -11,18 +11,29 @@ export default function NavbarComponent() {
    const isCoursesListPage = location.pathname.includes('/course-list');
 
    const { backendURL, isEducator, setIsEducator, navigate, getToken } = useContext(AppContext);
-   const { openSignIn } = useClerk()
-   const { user } = useUser()
+   const { openSignIn } = useClerk();
+   const { user } = useUser();
 
    async function becomeEducator() {
       try {
          if (isEducator) {
-            navigate('/educator')
+            navigate('/educator');
+            return;
+         }
+         const token = await getToken()
+         const { data } = await axios.get(backendURL + '/api/educator/update-role', { headers: { Authorization: `Bearer ${token}` } });
+
+         if (data.success) {
+            toast.success(data.message);
+            setIsEducator(true);
+
+         } else {
+            toast.error(data.message);
 
          }
 
       } catch(err) {
-
+         toast.error(err.message);
       }
    }
 
