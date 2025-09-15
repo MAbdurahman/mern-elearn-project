@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import {useAuth, useUser} from '@clerk/clerk-react';
 import humanizeDuration from 'humanize-duration';
-import {dummyCourses} from '../assets/assets.js';
-
 
 export const AppContext = createContext();
 
@@ -81,18 +79,23 @@ export const AppContextProvider = (props) => {
     */
    const fetchUserEnrolledCourses = async () => {
 
-      const token = await getToken();
+      try {
+         const token = await getToken();
 
-      const { data } = await axios.get(backendURL + '/api/user/enrolled-courses',
-         { headers: { Authorization: `Bearer ${token}` } })
+         const {data} = await axios.get(backendURL + '/api/user/enrolled-courses',
+            { headers: { Authorization: `Bearer ${token}` } })
 
-      if (data.success) {
-         setEnrolledCourses(data.enrolledCourses.reverse());
+         if (data.success) {
+            setEnrolledCourses(data.enrolledCourses.reverse());
 
-      } else (
-         toast.error(data.message)
+         } else (
+            toast.error(data.message)
 
-      )
+         )
+
+      } catch(err) {
+         toast.error(err.message);
+      }
 
    }
 
