@@ -43,6 +43,8 @@ import profile_img2 from './profile_img2.png'
 import profile_img3 from './profile_img3.png'
 import lesson_icon from './lesson_icon.svg'
 import no_results from './no-results.png'
+import mern_elearn_logo from './mern-elearn-logo.svg'
+import mern_elearn_logo_dark from './mern-elearn-logo-dark.svg'
 
 
 export const assets = {
@@ -90,7 +92,9 @@ export const assets = {
     play_icon,
     blue_tick_icon,
     lesson_icon,
-   no_results
+   no_results,
+   mern_elearn_logo,
+   mern_elearn_logo_dark,
 }
 
 export const dummyTestimonial = [

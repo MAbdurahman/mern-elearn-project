@@ -12,7 +12,7 @@ export default function FooterComponent() {
          <div className='flex flex-col md:items-start px-8 md:px-0 justify-center gap-10 md:gap-8 py-10 border-b border-white/30 xl:flex xl:flex-row xl:gap-20'>
 
             <div className='flex flex-col md:items-start items-center w-full'>
-               <img src={assets.logo_dark} alt="logo" />
+               <img src={assets.mern_elearn_logo_dark} alt="logo" className='footer-logo'/>
                <p className='mt-6 text-center md:text-left text-sm text-white/80'>
                   Our mission is to empower students to learn by doing through engaging video content, providing practical skills and knowledge essential for success in today's dynamic world. We are committed to transforming the learning experience with hands-on opportunities that foster real-world application and growth.
                </p>
@@ -41,7 +41,7 @@ export default function FooterComponent() {
 
          </div>
          <p className='pt-4 pb-3 text-center text-xs md:text-sm text-white/60'>
-            Copyright {year} Edemy,Inc., | All Rights Reserved.
+            Copyright {year} eLearn,Inc., | All Rights Reserved.
             <a href='#' className='block pb-8 text-center text-xs text-white/40'>Privacy policy | Terms and Conditions</a>
          </p>
       </footer>
