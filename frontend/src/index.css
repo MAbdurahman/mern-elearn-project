@@ -234,6 +234,11 @@
    height: auto;
 }
 
+.footer-logo--educator {
+   width: 33.3333%;
+   height: auto;
+}
+
 .box-shadow-custom-card {
    box-shadow: var(--box-shadow-custom-card);
 }

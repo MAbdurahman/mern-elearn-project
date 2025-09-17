@@ -56,7 +56,7 @@ export default function EnrollmentsPage() {
 
    return (
       <Fragment>
-         <div className='md:px-36 px-8 pt-10'>
+         <div className='h-[calc(100vh-100px)] md:px-36 px-8 pt-10'>
             <h2 className='text-2xl font-semibold'>My Enrollments</h2>
             <table className="md:table-auto table-fixed w-full overflow-hidden border mt-10">
                <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left max-sm:hidden">
