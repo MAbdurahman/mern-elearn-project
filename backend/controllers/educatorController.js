@@ -13,13 +13,14 @@ export const updateRoleToEducator = asyncHandler(async (req, res) => {
    try {
       const userId = req.auth.userId;
 
+      // Update user role in Clerk
       await clerkClient.users.updateUserMetadata(userId, {
          publicMetadata: {
             role: 'educator',
          },
       });
 
-      // Need to change on the User model in database
+      // Update user role in database
       const user = await User.findById(userId);
       if (!user) {
          return res.json({success: false, message: 'User not found!'});
