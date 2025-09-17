@@ -10,6 +10,10 @@ export default function DashboardPage() {
    const [dashboardData, setDashboardData] = useState(null);
    const { backendURL, isEducator, currency, getToken } = useContext(AppContext);
 
+   /**
+    * fetchDashboardData - fetches the dashboard data
+    * @returns {Promise<void>}
+    */
    async function fetchDashboardData() {
       try {
 
@@ -28,7 +32,7 @@ export default function DashboardPage() {
          }
 
       } catch (err) {
-         toast.error(err.message)
+         toast.error(err.message);
       }
    }
 
