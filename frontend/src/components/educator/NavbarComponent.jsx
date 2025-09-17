@@ -1,9 +1,24 @@
-export default function NavbarComponent() {
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserButton, useUser } from '@clerk/clerk-react';
+import { assets } from '../../assets/assets';
+import { AppContext } from '../../context/AppContext';
+
+export default function NavbarComponent({bgColor}) {
+   const { isEducator } = useContext(AppContext);
+   const { user } = useUser();
 
    return (
-      <div className="text-4xl">
-         <h2>NavbarComponent</h2>
-      </div>
-
+      isEducator && user && (
+         <div className={`flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3 ${bgColor}`}>
+            <Link to="/">
+               <img src={assets.mern_elearn_logo} alt='Logo' className='w-28 lg:w-32' />
+            </Link>
+            <div className='flex items-center gap-5 text-gray-500 relative'>
+               <p>Hi! {user.fullName}</p>
+               <UserButton />
+            </div>
+         </div>
+      )
    );
 }
