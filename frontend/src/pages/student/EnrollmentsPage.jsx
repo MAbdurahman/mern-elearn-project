@@ -43,7 +43,7 @@ export default function EnrollmentsPage() {
 
    useEffect(() => {
       if (userData) {
-         fetchUserEnrolledCourses()
+         fetchUserEnrolledCourses();
       }
    }, [userData]);
 

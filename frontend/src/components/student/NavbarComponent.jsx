@@ -20,7 +20,7 @@ export default function NavbarComponent() {
             navigate('/educator');
             return;
          }
-         const token = await getToken()
+         const token = await getToken();
          const { data } = await axios.get(backendURL + '/api/educator/update-role', { headers: { Authorization: `Bearer ${token}` } });
 
          if (data.success) {

@@ -25,12 +25,12 @@ export default function CourseListPage() {
                   item => item.courseTitle.toLowerCase().includes(input.toLowerCase())
                )
             )
-            : setFilteredCourse(tempCourses)
+            : setFilteredCourse(tempCourses);
 
       }
 
 
-   }, [allCourses, input])
+   }, [allCourses, input]);
 
 
    return filteredCourse && filteredCourse.length > 0 ?(

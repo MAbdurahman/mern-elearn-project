@@ -41,7 +41,7 @@ export default function CourseDetailsPage() {
          }
 
       } catch (err) {
-         toast.error(err.message)
+         toast.error(err.message);
 
       }
    }

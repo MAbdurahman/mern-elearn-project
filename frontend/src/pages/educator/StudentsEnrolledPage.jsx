@@ -45,7 +45,7 @@ export default function StudentsEnrolledPage() {
             <table className="table-fixed md:table-auto w-full overflow-hidden pb-4">
                <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left">
                <tr>
-                  <th className="px-4 py-3 font-semibold text-center hidden sm:table-cell">#</th>
+                  <th className="px-4 py-3 font-semibold text-center hidden sm:table-cell">Number</th>
                   <th className="px-4 py-3 font-semibold">Student Name</th>
                   <th className="px-4 py-3 font-semibold">Course Title</th>
                   <th className="px-4 py-3 font-semibold hidden sm:table-cell">Date</th>
