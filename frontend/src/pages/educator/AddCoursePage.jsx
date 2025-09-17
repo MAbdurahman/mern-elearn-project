@@ -113,7 +113,7 @@ export default function AddCoursePage() {
          e.preventDefault();
 
          if (!image) {
-            toast.error('Thumbnail Not Selected')
+            toast.error('Thumbnail Not Selected');
          }
 
          const courseData = {
@@ -130,7 +130,7 @@ export default function AddCoursePage() {
 
          const token = await getToken()
 
-         const { data } = await axios.post(backendUrl + '/api/educator/add-course', formData,
+         const { data } = await axios.post(backendURL + '/api/educator/add-course', formData,
             { headers: { Authorization: `Bearer ${token}` } }
          )
 
