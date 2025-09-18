@@ -14,12 +14,12 @@ export default function CallToActionComponent() {
          </p>
          <div className='flex items-center font-medium gap-6 mt-4'>
             <a href='#courses' >
-               <button className='cursor-pointer px-10 py-3 rounded-md text-white bg-blue-600'>Get
+               <button className='cursor-pointer px-10 py-3 uppercase rounded-md text-white bg-blue-600'>Get
                   started
                </button>
             </a>
             <a href='#courses'>
-               <button className='cursor-pointer flex items-center gap-2'>
+               <button className='cursor-pointer uppercase flex items-center gap-2'>
                   Learn more
                   <img src={assets.arrow_icon} alt='arrow_icon'/>
                </button>

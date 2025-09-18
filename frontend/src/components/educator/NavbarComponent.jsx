@@ -16,7 +16,7 @@ export default function NavbarComponent({bgColor}) {
                <img src={assets.mern_elearn_logo} alt='Logo' className='w-28 lg:w-32' />
             </Link>
             <div className='flex items-center gap-5 text-gray-500 relative'>
-               <p>Hi! {getFirstName(user.fullName)}</p>
+               <p>Hi&nbsp; {getFirstName(user.fullName)}&nbsp;<span className='text-gray-900 font-semibold'>!</span></p>
                <UserButton />
             </div>
          </div>
