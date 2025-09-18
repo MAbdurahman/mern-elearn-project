@@ -43,10 +43,11 @@ import profile_img2 from './profile_img2.png'
 import profile_img3 from './profile_img3.png'
 import lesson_icon from './lesson_icon.svg'
 import no_results from './no-results.png'
-import mern_elearn_logo from './mern-elearn-logo.svg'
-import mern_elearn_logo_dark from './mern-elearn-logo-dark.svg'
 import elearn_logo from './elearn-logo.svg'
 import elearn_logo_dark from './elearn-logo-dark.svg'
+import testimonial_img_1 from './testimonial-img-1.jpg'
+import testimonial_img_2 from './testimonial-img-2.jpg'
+import testimonial_img_3 from './testimonial-img-3.jpg'
 
 
 
@@ -96,33 +97,34 @@ export const assets = {
     blue_tick_icon,
     lesson_icon,
    no_results,
-   mern_elearn_logo,
-   mern_elearn_logo_dark,
    elearn_logo,
    elearn_logo_dark,
+   testimonial_img_1,
+   testimonial_img_2,
+   testimonial_img_3,
 }
 
 export const dummyTestimonial = [
     {
-        name: 'Donald Jackson',
+        name: 'Henry Clayton',
         role: 'SWE 1 @ Amazon',
-        image: assets.profile_img_1,
+        image: assets.testimonial_img_1,
         rating: 5,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+        feedback: 'I\'ve been using eLearn for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
     },
     {
-        name: 'Richard Nelson',
+        name: 'Jasmine Zamora',
         role: 'SWE 2 @ Samsung',
-        image: assets.profile_img_2,
+        image: assets.testimonial_img_3,
         rating: 4,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+        feedback: 'I\'ve been using eLearn for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
     },
     {
-        name: 'James Addams',
+        name: 'Clyde Sherman',
         role: 'SWE 2 @ Google',
-        image: assets.profile_img_3,
-        rating: 4.5,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+        image: assets.testimonial_img_2,
+        rating: 5,
+        feedback: 'I\'ve been using eLearn for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
     },
 ];
 
