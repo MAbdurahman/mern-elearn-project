@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserButton, useUser } from '@clerk/clerk-react';
 import { assets } from '../../assets/assets';
 import { AppContext } from '../../context/AppContext';
+import { getFirstName } from '../../utils/functionsUtil';
 
 export default function NavbarComponent({bgColor}) {
    const { isEducator } = useContext(AppContext);
@@ -15,7 +16,7 @@ export default function NavbarComponent({bgColor}) {
                <img src={assets.mern_elearn_logo} alt='Logo' className='w-28 lg:w-32' />
             </Link>
             <div className='flex items-center gap-5 text-gray-500 relative'>
-               <p>Hi! {user.fullName}</p>
+               <p>Hi! {getFirstName(user.fullName)}</p>
                <UserButton />
             </div>
          </div>
