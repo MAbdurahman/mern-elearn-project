@@ -45,6 +45,9 @@ import lesson_icon from './lesson_icon.svg'
 import no_results from './no-results.png'
 import mern_elearn_logo from './mern-elearn-logo.svg'
 import mern_elearn_logo_dark from './mern-elearn-logo-dark.svg'
+import elearn_logo from './elearn-logo.svg'
+import elearn_logo_dark from './elearn-logo-dark.svg'
+
 
 
 export const assets = {
@@ -95,6 +98,8 @@ export const assets = {
    no_results,
    mern_elearn_logo,
    mern_elearn_logo_dark,
+   elearn_logo,
+   elearn_logo_dark,
 }
 
 export const dummyTestimonial = [

@@ -8,7 +8,7 @@ export default function EducatorPage() {
 
    return (
       <div className='text-default min-h-screen bg-white'>
-         <NavbarComponent/>
+         <NavbarComponent bgColor='bg-gray-100'/>
          <div className='flex'>
             <SideBarComponent/>
             <div>
