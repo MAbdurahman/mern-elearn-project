@@ -41,7 +41,7 @@ export default function FooterComponent() {
 
          </div>
          <p className='pt-4 pb-3 text-center text-xs md:text-sm text-white/60'>
-            Copyright {year} eLearn,Inc., | All Rights Reserved.
+            Copyright {year} eLearn, Inc., | All Rights Reserved.
             <a href='#' className='block pb-8 text-center text-xs text-white/40'>Privacy policy | Terms and Conditions</a>
          </p>
       </footer>

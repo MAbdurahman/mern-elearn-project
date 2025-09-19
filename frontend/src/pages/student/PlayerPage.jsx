@@ -64,7 +64,7 @@ export default function PlayerPage({}) {
 
          const token = await getToken();
 
-         const { data } = await axios.post(backendUrl + '/api/user/get-course-progress',
+         const { data } = await axios.post(backendURL + '/api/user/get-course-progress',
             { courseId },
             { headers: { Authorization: `Bearer ${token}` } }
          )
@@ -93,7 +93,7 @@ export default function PlayerPage({}) {
 
          const token = await getToken();
 
-         const { data } = await axios.post(backendUrl + '/api/user/add-rating',
+         const { data } = await axios.post(backendURL + '/api/user/add-rating',
             { courseId, rating },
             { headers: { Authorization: `Bearer ${token}` } }
          );
@@ -108,7 +108,7 @@ export default function PlayerPage({}) {
          }
 
       } catch (err) {
-         toast.error(err.message)
+         toast.error(err.message);
       }
    }
 

@@ -5,7 +5,7 @@ export default function CompaniesComponent() {
 
    return (
       <div className="pt-16">
-         <p className="text-xl text-gray-500">Trusted by learners from</p>
+         <p className="text-xl text-gray-900">Trusted by learners from</p>
          <div className="flex flex-wrap items-center justify-center gap-8 md:mt-10 mt-5">
             <img className='md:w-28 w-20' src={assets.microsoft_logo} alt="Microsoft logo" />
             <img className='md:w-28 w-20' src={assets.walmart_logo} alt="Walmart logo" />
