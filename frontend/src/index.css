@@ -18,6 +18,8 @@
    --font-size-home-heading-large-48: 48px;
    --font-size-home-heading-large-56: 56px;
 
+   --color-primary-600: hsl(221, 97%, 54%);
+
    --color-neutral-000: hsl(210, 0%, 98%);
    --color-neutral-100: hsl(210, 0%, 88%);
    --color-neutral-200: hsl(210, 0%, 78%);
