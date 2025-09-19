@@ -50,7 +50,7 @@ export default function DashboardPage() {
                   <img src={assets.patients_icon} alt='patients_icon' />
                   <div>
                      <p className='text-2xl font-medium text-gray-600'>{dashboardData.enrolledStudentsData.length}</p>
-                     <p className='text-base text-gray-500'>Total Enrollments</p>
+                     <p className='text-base text-gray-500'>Enrollments</p>
                   </div>
                </div>
                <div className='flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md'>
@@ -69,12 +69,12 @@ export default function DashboardPage() {
                </div>
             </div>
             <div>
-               <h2 className="pb-4 text-lg font-medium">Latest Enrolments</h2>
+               <h3 className="pb-4 text-lg font-medium">Latest Enrollments</h3>
                <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20">
                   <table className="table-fixed md:table-auto w-full overflow-hidden">
                      <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left">
                      <tr>
-                        <th className="px-4 py-3 font-semibold text-center hidden sm:table-cell">#</th>
+                        <th className="px-4 py-3 font-semibold hidden sm:table-cell">Number</th>
                         <th className="px-4 py-3 font-semibold">Student Name</th>
                         <th className="px-4 py-3 font-semibold">Course Title</th>
                      </tr>

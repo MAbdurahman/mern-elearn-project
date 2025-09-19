@@ -35,7 +35,7 @@ export default function App() {
             <Route path='/player/:courseId' element={<PlayerPage />} />
             <Route path='/loading/:path' element={<LoadingComponent />} />
             <Route path='/educator' element={<EducatorPage />} >
-               <Route path='dashboard' element={<DashboardPage />} />
+               <Route path='/educator' element={<DashboardPage />} />
                <Route path='add-course' element={<AddCoursePage />} />
                <Route path='courses' element={<CoursesPage />} />
                <Route path='students-enrolled' element={<StudentsEnrolledPage />} />

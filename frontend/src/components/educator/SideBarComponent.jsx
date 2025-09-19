@@ -22,7 +22,7 @@ export default function SideBarComponent() {
                key={item.name}
                end={item.path === '/educator'} // Add end prop for the Dashboard link
                className={({ isActive }) =>
-                  `flex items-center md:flex-row flex-col md:justify-start justify-center py-3.5 md:px-10 gap-3 ${isActive
+                  `flex items-center font-semibold md:flex-row flex-col md:justify-start justify-center py-3.5 md:px-10 gap-3 ${isActive
                      ? 'bg-blue-100 border-r-[6px] border-primary-600/90'
                      : 'hover:bg-gray-100/90 border-r-[6px] border-white hover:border-gray-100/90'
                   }`
