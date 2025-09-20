@@ -39,7 +39,7 @@ export default function CoursesPage() {
                <table className="md:table-auto table-fixed w-full overflow-hidden">
                   <thead className="text-gray-900 border-b border-gray-500/20 text-sm text-left">
                   <tr>
-                     <th className="px-4 py-3 font-semibold truncate">All Courses</th>
+                     <th className="px-4 py-3 font-semibold truncate">Courses</th>
                      <th className="px-4 py-3 font-semibold truncate">Earnings</th>
                      <th className="px-4 py-3 font-semibold truncate">Students</th>
                      <th className="px-4 py-3 font-semibold truncate">Published On</th>
