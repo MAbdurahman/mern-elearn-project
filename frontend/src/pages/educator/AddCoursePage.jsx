@@ -7,6 +7,10 @@ import { assets } from '../../assets/assets';
 import { AppContext } from '../../context/AppContext';
 
 export default function AddCoursePage() {
+   const editorRef = useRef(null);
+   const quillRef = useRef(null);
+   const { backendURL, getToken } = useContext(AppContext);
+
    const [courseTitle, setCourseTitle] = useState('');
    const [coursePrice, setCoursePrice] = useState(0);
    const [discount, setDiscount] = useState(0);
@@ -20,10 +24,6 @@ export default function AddCoursePage() {
       lectureUrl: '',
       isPreviewFree: false,
    });
-
-   const editorRef = useRef(null);
-   const quillRef = useRef(null);
-   const { backendURL, getToken } = useContext(AppContext);
 
    /**
     * handleChapter - handles chapter actions
@@ -45,12 +45,14 @@ export default function AddCoursePage() {
          }
       } else if (action === 'remove') {
          setChapters(chapters.filter((chapter) => chapter.chapterId !== chapterId));
+
       } else if (action === 'toggle') {
          setChapters(
             chapters.map((chapter) =>
                chapter.chapterId === chapterId ? { ...chapter, collapsed: !chapter.collapsed } : chapter
             )
          );
+
       }
    }
 
@@ -124,15 +126,15 @@ export default function AddCoursePage() {
             courseContent: chapters,
          }
 
-         const formData = new FormData()
-         formData.append('courseData', JSON.stringify(courseData))
-         formData.append('image', image)
+         const formData = new FormData();
+         formData.append('courseData', JSON.stringify(courseData));
+         formData.append('image', image);
 
-         const token = await getToken()
+         const token = await getToken();
 
          const { data } = await axios.post(backendURL + '/api/educator/add-course', formData,
             { headers: { Authorization: `Bearer ${token}` } }
-         )
+         );
 
          if (data.success) {
             toast.success(data.message);
@@ -188,15 +190,15 @@ export default function AddCoursePage() {
                <div className='flex md:flex-row flex-col items-center gap-3'>
                   <p>Course Thumbnail</p>
                   <label htmlFor='thumbnailImage' className='flex items-center gap-3'>
-                     <img src={assets.file_upload_icon} alt="" className='p-3 bg-blue-500 rounded' />
+                     <img src={assets.file_upload_icon} alt="" className='p-3 bg-primary-600 rounded' />
                      <input type="file" id='thumbnailImage' onChange={e => setImage(e.target.files[0])} accept="image/*" hidden />
-                     <img className='max-h-10' src={image ? URL.createObjectURL(image) : ''} alt="" />
+                     <img className='max-h-10' src={image ? URL.createObjectURL(image) : ''} alt='' />
                   </label>
                </div>
             </div>
 
             <div className='flex flex-col gap-1'>
-               <p>Discount %</p>
+               <p>Discount Percent</p>
                <input onChange={e => setDiscount(e.target.value)} value={discount} type="number" placeholder='0' min={0} max={100} className='outline-none md:py-2.5 py-2 w-28 px-3 rounded border border-gray-500' required />
             </div>
 

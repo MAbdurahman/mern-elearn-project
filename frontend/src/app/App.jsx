@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Routes, Route, useLocation, useMatch } from 'react-router-dom';
+import 'quill/dist/quill.snow.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify';
 import NavbarComponent from '../components/student/NavbarComponent.jsx';
