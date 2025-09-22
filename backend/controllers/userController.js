@@ -4,6 +4,7 @@ import CourseProgress from '../models/courseProgressModel.js';
 import Purchase from '../models/purchaseModel.js';
 import asyncHandler from '../utils/asyncHandlerUtils.js';
 import stripe from 'stripe';
+import {api_key_placeholder} from '../configs/configPlaceholder.js';
 
 /**
  * retrieveUserData -
@@ -54,7 +55,7 @@ export const purchaseUserCourse = asyncHandler(async (req, res) => {
       const newPurchase = await Purchase.create(purchaseData);
 
       // Stripe Gateway Initialize
-      const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
+      const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY || api_key_placeholder);
       const currency = process.env.CURRENCY.toLocaleLowerCase();
 
       // Creating line items to for Stripe
