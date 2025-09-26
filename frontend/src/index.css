@@ -256,3 +256,10 @@
 .grid-cols-auto {
    grid-template-columns: var(--grid-template-columns-auto);
 }
+
+/* Extra small devices (portrait phones,  390px and below) */
+@media screen and (max-width: 390px) {
+   .cta-button {
+      text-transform: capitalize;
+   }
+}
